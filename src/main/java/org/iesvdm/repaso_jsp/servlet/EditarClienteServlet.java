@@ -8,6 +8,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.iesvdm.repaso_jsp.dao.ClienteDAO;
 import org.iesvdm.repaso_jsp.dao.ClienteDAOImpl;
+import org.iesvdm.repaso_jsp.dao.PedidoDAO;
+import org.iesvdm.repaso_jsp.dao.PedidoDAOImpl;
 import org.iesvdm.repaso_jsp.model.Cliente;
 import org.iesvdm.repaso_jsp.model.Pedido;
 

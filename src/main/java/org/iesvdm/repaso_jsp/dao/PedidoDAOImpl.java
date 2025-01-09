@@ -72,41 +72,6 @@ public class PedidoDAOImpl extends AbstractDAOImpl implements PedidoDAO {
         } finally {
             closeDb(conn, s, rs);
         }
-        return listaPedido;    }
-
-    @Override
-    public Optional<Pedido> find(int id) {
-        Connection conn = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-
-        try {
-            conn = connectDB();
-
-            ps = conn.prepareStatement("SELECT * FROM pedido WHERE id = ?");
-
-            ps.setInt(1, id);
-
-            rs = ps.executeQuery();
-
-            if (rs.next()) {
-                Pedido pedido = new Pedido();
-
-                pedido.setId(rs.getInt("id"));
-                pedido.setTotal(rs.getInt("total"));
-                pedido.setFecha(rs.getDate("fecha"));
-                pedido.setId_cliente(rs.getInt("id_cliente"));
-                pedido.setId_comercial(rs.getInt("id_comercial"));
-
-                return Optional.of(pedido);
-            }
-
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        } finally {
-            closeDb(conn, ps, rs);
-        }
-
-        return Optional.empty();
+        return listaPedido;
     }
 }

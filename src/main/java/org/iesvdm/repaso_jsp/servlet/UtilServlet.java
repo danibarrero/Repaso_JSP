@@ -48,14 +48,14 @@ public class UtilServlet {
             }
 
             // ID_CLIENTE
-            Objects.requireNonNull(request.getParameter("id_cliente"));
-            if (request.getParameter("id_cliente").isBlank()) throw new RuntimeException("Parámetro vacío o todo espacios blancos.");
-            id_cliente = Integer.parseInt(request.getParameter("id_cliente"));
+            //Objects.requireNonNull(request.getParameter("id_cliente"));
+            // if (request.getParameter("id_cliente").isBlank()) throw new RuntimeException("Parámetro vacío o todo espacios blancos.");
+            // id_cliente = Integer.parseInt(request.getParameter("id_cliente"));
 
             // ID_COMERCIAL
-            Objects.requireNonNull(request.getParameter("id_comercial"));
-            if (request.getParameter("id_comercial").isBlank()) throw new RuntimeException("Parámetro vacío o todo espacios blancos.");
-            id_comercial = Integer.parseInt(request.getParameter("id_comercial"));
+            // Objects.requireNonNull(request.getParameter("id_comercial"));
+            // if (request.getParameter("id_comercial").isBlank()) throw new RuntimeException("Parámetro vacío o todo espacios blancos.");
+            // id_comercial = Integer.parseInt(request.getParameter("id_comercial"));
 
 
             return Optional.of(new Pedido(-1, total, fecha, id_cliente, id_comercial));

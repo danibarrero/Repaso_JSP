@@ -28,7 +28,7 @@
             <div><input type="date" name="fecha"/></div>
             <br>
         </div>
-        <!-- Cliente como radio buttons -->
+        <!-- CLIENTE CON RADIO BUTTON -->
         <div>
             <div>Cliente</div>
             <div>
@@ -52,6 +52,8 @@
             </div>
             <br>
         </div>
+
+        <!-- COMERCIAL CON SELECCIÓN MULTIPLE-->
         <div>
             <div>Comercial</div>
             <div><input type="text" name="id_comercial"/></div>

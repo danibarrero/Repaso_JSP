@@ -6,11 +6,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.iesvdm.repaso_jsp.dao.ClienteDAO;
-import org.iesvdm.repaso_jsp.dao.ClienteDAOImpl;
-import org.iesvdm.repaso_jsp.dao.PedidoDAO;
-import org.iesvdm.repaso_jsp.dao.PedidoDAOImpl;
+import org.iesvdm.repaso_jsp.dao.*;
 import org.iesvdm.repaso_jsp.model.Cliente;
+import org.iesvdm.repaso_jsp.model.Comercial;
 import org.iesvdm.repaso_jsp.model.Pedido;
 
 import java.io.IOException;
@@ -23,11 +21,16 @@ public class CrearPedidoServlet extends HttpServlet {
 
     private PedidoDAO pedidoDAO = new PedidoDAOImpl();
     private ClienteDAO clienteDAO = new ClienteDAOImpl();
+    private ComercialDAO comercialDAO = new ComercialDAOImpl();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Cliente> clientes = clienteDAO.getAll();
         request.setAttribute("clientes", clientes);
+
+        List<Comercial> comerciales = comercialDAO.getAll();
+        request.setAttribute("comerciales", comerciales);
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/FormularioPedidos.jsp");
         dispatcher.forward(request, response);
     }

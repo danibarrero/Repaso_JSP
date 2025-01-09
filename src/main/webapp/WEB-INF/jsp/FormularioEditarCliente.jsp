@@ -23,7 +23,7 @@
     </div>
 
     <form method="post" action="EditarClienteServlet">
-        <input type="hidden" name="id" value="<%=cliente.getId()%>" id="id_cliente">
+        <input type="hidden" name="id" value="<%=cliente.getId()%>">
         <div>
             <div>Nombre</div>
             <div>
