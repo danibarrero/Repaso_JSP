@@ -52,7 +52,6 @@ public class PedidoDAOImpl extends AbstractDAOImpl implements PedidoDAO {
         try {
             conn = connectDB();
 
-            // Se utiliza un objeto Statement dado que no hay parámetros en la consulta.
             s = conn.createStatement();
 
             rs = s.executeQuery("SELECT * FROM pedido");

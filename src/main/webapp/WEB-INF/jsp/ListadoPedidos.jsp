@@ -21,7 +21,6 @@
                 "AS cliente ON pedido.id_cliente = cliente.id JOIN ventas.comercial " +
                 "AS comercial ON pedido.id_comercial = comercial.id");
         // ResultSet listado = s.executeQuery ("SELECT * FROM pedido");
-
     %>
 
     <div>
@@ -67,7 +66,7 @@
 
             <td>
                 <form method="get" action="EditarClienteServlet">
-                    <input type="hidden" name="id" value="<%= listado.getInt("id_cliente")%>">
+                    <input type="hidden" name="id_cliente" value="<%= listado.getInt("id_cliente")%>">
                     <input type="submit" value="Cliente">
                 </form>
                 <form method="post" action="BorrarPedidoServlet">

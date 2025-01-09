@@ -27,7 +27,7 @@ public class EditarClienteServlet extends HttpServlet {
 
         RequestDispatcher dispatcher = null;
 
-        String idSTR = request.getParameter("id");
+        String idSTR = request.getParameter("id_cliente"); // Se tiene que llamar igual que name de EditarPedidos de cliente
         int id = Integer.parseInt(idSTR);
 
         try {

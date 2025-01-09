@@ -1,11 +1,6 @@
 <%@ page import="org.iesvdm.repaso_jsp.model.Cliente" %>
 <%@ page import="java.util.List" %>
 <%@ page import="org.iesvdm.repaso_jsp.model.Comercial" %>
-<%@ page import="java.sql.ResultSet" %>
-<%@ page import="static jdk.internal.org.jline.utils.Colors.s" %>
-<%@ page import="java.sql.Statement" %>
-<%@ page import="java.sql.DriverManager" %>
-<%@ page import="java.sql.Connection" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -50,8 +45,10 @@
                         for (Cliente cliente : clientes) {
                 %>
                 <label>
-                    <input type="radio" name="id_cliente" value="<%= cliente.getId() %>">
+                    <input type="radio" name="id_cliente" value="<%= cliente.getId() %>"> <!-- Este name tiene que ser igual que el name de EditarClienteServlet -->
                     <%= cliente.getNombre() %>
+                    <%= cliente.getApellido1() %>
+                    <%= cliente.getApellido2() %>
                 </label><br>
                 <%
                     }
@@ -82,7 +79,11 @@
                     <%
                         for (Comercial comercial : comerciales) {
                     %>
-                    <option value="<%= comercial.getId() %>"><%= comercial.getNombre() %></option>
+                    <option value="<%= comercial.getId() %>">
+                        <%= comercial.getNombre() %>
+                        <%= comercial.getApellido1() %>
+                        <%= comercial.getApellido2() %>
+                    </option>
                     <%
                         }
                     %>

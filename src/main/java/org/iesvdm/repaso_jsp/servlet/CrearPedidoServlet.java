@@ -20,6 +20,8 @@ import java.util.Optional;
 public class CrearPedidoServlet extends HttpServlet {
 
     private PedidoDAO pedidoDAO = new PedidoDAOImpl();
+
+    // Si pide Radio Buttom o Seleción Multiple
     private ClienteDAO clienteDAO = new ClienteDAOImpl();
     private ComercialDAO comercialDAO = new ComercialDAOImpl();
 
