@@ -20,6 +20,8 @@
                 "AS pedido JOIN ventas.cliente " +
                 "AS cliente ON pedido.id_cliente = cliente.id JOIN ventas.comercial " +
                 "AS comercial ON pedido.id_comercial = comercial.id");
+        // ResultSet listado = s.executeQuery ("SELECT * FROM pedido");
+
     %>
 
     <div>
