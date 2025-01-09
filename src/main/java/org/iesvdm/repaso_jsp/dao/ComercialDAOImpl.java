@@ -28,7 +28,7 @@ public class ComercialDAOImpl extends AbstractDAOImpl implements ComercialDAO {
             rs = s.executeQuery("SELECT * FROM comercial");
             while (rs.next()) {
                 Comercial comercial = new Comercial();
-
+                comercial.setId(rs.getInt("id"));
                 comercial.setNombre(rs.getString("nombre"));
                 comercial.setApellido1(rs.getString("apellido1"));
                 comercial.setApellido2(rs.getString("apellido2"));
@@ -43,4 +43,5 @@ public class ComercialDAOImpl extends AbstractDAOImpl implements ComercialDAO {
         }
         return listaPedido;
     }
+
 }

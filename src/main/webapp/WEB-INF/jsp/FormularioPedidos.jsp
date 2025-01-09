@@ -78,7 +78,7 @@
                     List<Comercial> comerciales = (List<Comercial>) request.getAttribute("comerciales");
                     if (comerciales != null) {
                 %>
-                <select name="id_comercial" multiple>
+                <select name="id_comercial" multiple size="5">
                     <%
                         for (Comercial comercial : comerciales) {
                     %>
