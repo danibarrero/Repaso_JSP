@@ -75,7 +75,7 @@
             <div>Comercial</div>
             <div>
                 <%
-                    List<Comercial> comerciales = (List<Comercial>) request.getAttribute("comerciales");
+                    List<Comercial> comerciales = (List<Comercial>) request.getAttribute("comerciales"); // Mismo nombre que en CrearPedidoservlet
                     if (comerciales != null) {
                 %>
                 <select name="id_comercial" multiple size="5">

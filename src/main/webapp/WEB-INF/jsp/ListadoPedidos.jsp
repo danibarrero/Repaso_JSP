@@ -68,6 +68,10 @@
                     <input type="hidden" name="id" value="<%= listado.getInt("id_cliente")%>">
                     <input type="submit" value="Cliente">
                 </form>
+                <form method="post" action="BorrarPedidoServlet">
+                    <input type="hidden" name="id" value="<%= listado.getInt("id")%>">
+                    <input type="submit" value="Borrar">
+                </form>
             </td>
         </tr>
         <%

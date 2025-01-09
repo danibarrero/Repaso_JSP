@@ -74,4 +74,30 @@ public class PedidoDAOImpl extends AbstractDAOImpl implements PedidoDAO {
         }
         return listaPedido;
     }
+
+    @Override
+    public void delete(int id) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            conn = connectDB();
+
+            ps = conn.prepareStatement("DELETE FROM pedido WHERE id = ?");
+            int idx = 1;
+            ps.setInt(idx, id);
+
+            int rows = ps.executeUpdate();
+
+            if (rows == 0)
+                System.out.println("Delete de socio con 0 registros eliminados.");
+
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            closeDb(conn, ps, rs);
+        }
+
+    }
 }

@@ -8,4 +8,5 @@ import java.util.Optional;
 public interface PedidoDAO {
     public void create(Pedido pedido);
     public List<Pedido> getAll();
+    public void delete(int id);
 }

@@ -26,7 +26,7 @@ public class CrearPedidoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Cliente> clientes = clienteDAO.getAll();
-        request.setAttribute("clientes", clientes);
+        request.setAttribute("clientes", clientes); // El mismo nombre en todo
 
         List<Comercial> comerciales = comercialDAO.getAll();
         request.setAttribute("comerciales", comerciales);
