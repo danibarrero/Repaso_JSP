@@ -65,7 +65,7 @@
 
             <td>
                 <form method="get" action="EditarClienteServlet">
-                    <input type="hidden" name="id" value="<%= listado.getString("cliente.id")%>">
+                    <input type="hidden" name="id" value="<%= listado.getString("id_cliente")%>">
                     <input type="submit" value="Cliente">
                 </form>
             </td>

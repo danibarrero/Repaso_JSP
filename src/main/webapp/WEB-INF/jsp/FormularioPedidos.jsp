@@ -1,3 +1,5 @@
+<%@ page import="org.iesvdm.repaso_jsp.model.Cliente" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -26,9 +28,28 @@
             <div><input type="date" name="fecha"/></div>
             <br>
         </div>
+        <!-- Cliente como radio buttons -->
         <div>
             <div>Cliente</div>
-            <div><input type="text" name="id_cliente"/></div>
+            <div>
+                <%
+                    List<Cliente> clientes = (List<Cliente>) request.getAttribute("clientes");
+                    if (clientes != null) {
+                        for (Cliente cliente : clientes) {
+                %>
+                <label>
+                    <input type="radio" name="id_cliente" value="<%= cliente.getId() %>">
+                    <%= cliente.getNombre() %>
+                </label><br>
+                <%
+                    }
+                } else {
+                %>
+                <div>No hay clientes disponibles</div>
+                <%
+                    }
+                %>
+            </div>
             <br>
         </div>
         <div>

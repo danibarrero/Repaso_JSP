@@ -102,6 +102,8 @@ public class UtilServlet {
             categoria = Integer.parseInt(request.getParameter("categoria"));
             if (categoria < 0 || categoria > 10) throw new Exception("Tiene que estar entre 0 y 10");
 
+            return Optional.of(new Cliente(-1, nombre, apellido1, apellido2, ciudad, categoria));
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
