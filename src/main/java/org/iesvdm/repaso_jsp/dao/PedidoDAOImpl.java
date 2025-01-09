@@ -60,7 +60,7 @@ public class PedidoDAOImpl extends AbstractDAOImpl implements PedidoDAO {
                 Pedido pedido = new Pedido();
 
                 pedido.setId(rs.getInt("id"));
-                pedido.setTotal(rs.getInt("total"));
+                pedido.setTotal(rs.getDouble("total"));
                 pedido.setFecha(rs.getDate("fecha"));
                 pedido.setId_cliente(rs.getInt("id_cliente"));
                 pedido.setId_comercial(rs.getInt("id_comercial"));

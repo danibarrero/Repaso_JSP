@@ -28,7 +28,13 @@
             <div><input type="date" name="fecha"/></div>
             <br>
         </div>
+
         <!-- CLIENTE CON RADIO BUTTON -->
+        <!-- <div>
+            <div>Cliente</div>
+            <div><input type="number" name="id_cliente"></div>
+            <br>
+        </div> -->
         <div>
             <div>Cliente</div>
             <div>

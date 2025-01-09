@@ -94,10 +94,10 @@ public class ClienteDAOImpl extends AbstractDAOImpl implements ClienteDAO {
             ps.setString(idx++, cliente.getNombre());
             ps.setString(idx++, cliente.getApellido1());
             ps.setString(idx++, cliente.getApellido2());
-            ps.setString(idx, cliente.getCiudad());
+            ps.setString(idx++, cliente.getCiudad());
             ps.setInt(idx++, cliente.getCategoria());
 
-            ps.setInt(idx++, cliente.getId());
+            ps.setInt(idx, cliente.getId());
 
             int rows = ps.executeUpdate();
 

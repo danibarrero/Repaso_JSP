@@ -48,14 +48,14 @@ public class UtilServlet {
             }
 
             // ID_CLIENTE
-            //Objects.requireNonNull(request.getParameter("id_cliente"));
-            // if (request.getParameter("id_cliente").isBlank()) throw new RuntimeException("Parámetro vacío o todo espacios blancos.");
-            // id_cliente = Integer.parseInt(request.getParameter("id_cliente"));
+            Objects.requireNonNull(request.getParameter("id_cliente"));
+            if (request.getParameter("id_cliente").isBlank()) throw new RuntimeException("Parámetro vacío o todo espacios blancos.");
+            id_cliente = Integer.parseInt(request.getParameter("id_cliente"));
 
             // ID_COMERCIAL
-            // Objects.requireNonNull(request.getParameter("id_comercial"));
-            // if (request.getParameter("id_comercial").isBlank()) throw new RuntimeException("Parámetro vacío o todo espacios blancos.");
-            // id_comercial = Integer.parseInt(request.getParameter("id_comercial"));
+            Objects.requireNonNull(request.getParameter("id_comercial"));
+            if (request.getParameter("id_comercial").isBlank()) throw new RuntimeException("Parámetro vacío o todo espacios blancos.");
+            id_comercial = Integer.parseInt(request.getParameter("id_comercial"));
 
 
             return Optional.of(new Pedido(-1, total, fecha, id_cliente, id_comercial));
@@ -69,6 +69,7 @@ public class UtilServlet {
     public static Optional<Cliente> validarEditar(HttpServletRequest request) {
 
         boolean valida = true;
+        int id = Integer.parseInt(request.getParameter("id"));
         String nombre = null;
         String apellido1 = null;
         String apellido2 = null;
@@ -100,9 +101,9 @@ public class UtilServlet {
             Objects.requireNonNull(request.getParameter("categoria"));
             if (request.getParameter("categoria").isBlank()) throw new RuntimeException("Parámetro vacío o todo espacios blancos.");
             categoria = Integer.parseInt(request.getParameter("categoria"));
-            if (categoria < 0 || categoria > 10) throw new Exception("Tiene que estar entre 0 y 10");
+            if (categoria < 0 || categoria > 1000) throw new Exception("Tiene que estar entre 0 y 1000");
 
-            return Optional.of(new Cliente(-1, nombre, apellido1, apellido2, ciudad, categoria));
+            return Optional.of(new Cliente(id, nombre, apellido1, apellido2, ciudad, categoria));
 
         } catch (Exception ex) {
             ex.printStackTrace();
