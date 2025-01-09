@@ -1,5 +1,11 @@
 <%@ page import="org.iesvdm.repaso_jsp.model.Cliente" %>
 <%@ page import="java.util.List" %>
+<%@ page import="org.iesvdm.repaso_jsp.model.Comercial" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="static jdk.internal.org.jline.utils.Colors.s" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.Connection" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -59,12 +65,39 @@
             <br>
         </div>
 
-        <!-- COMERCIAL CON SELECCIÓN MULTIPLE-->
+        <!-- COMERCIAL CON SELECCIÓN MÚLTIPLE -->
+        <!-- <div>
+        <div>Comercial</div>
+            <div><input type="number" name="id_comercial"></div>
+        <br>
+        </div> -->
         <div>
             <div>Comercial</div>
-            <div><input type="text" name="id_comercial"/></div>
+            <div>
+                <%
+                    List<Comercial> comerciales = (List<Comercial>) request.getAttribute("comerciales");
+                    if (comerciales != null) {
+                %>
+                <select name="id_comercial" multiple>
+                    <%
+                        for (Comercial comercial : comerciales) {
+                    %>
+                    <option value="<%= comercial.getId() %>"><%= comercial.getNombre() %></option>
+                    <%
+                        }
+                    %>
+                </select>
+                <%
+                } else {
+                %>
+                <div>No hay comerciales disponibles</div>
+                <%
+                    }
+                %>
+            </div>
             <br>
         </div>
+
 
         <!-- Botón aceptar -->
         <div>
