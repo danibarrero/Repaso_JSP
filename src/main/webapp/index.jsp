@@ -5,6 +5,12 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-    <a href="ListarPedidoServlet">Listado<a>
+    <!-- <a href="ListarPedidoServlet">Listado<a> -->
+
+    Redirigiendo. Por favor, espere...
+    <%
+        response.sendRedirect("ListarPedidoServlet");
+    %>
+</body>
 </body>
 </html>

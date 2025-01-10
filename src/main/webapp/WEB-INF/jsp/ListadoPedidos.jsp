@@ -16,10 +16,9 @@
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/ventas","root", "secret");
         Statement s = conexion.createStatement();
-        ResultSet listado = s.executeQuery("SELECT * FROM ventas.pedido " +
-                "AS pedido JOIN ventas.cliente " +
-                "AS cliente ON pedido.id_cliente = cliente.id JOIN ventas.comercial " +
-                "AS comercial ON pedido.id_comercial = comercial.id");
+        ResultSet listado = s.executeQuery("SELECT * FROM ventas.pedido " + "AS pedido " +
+                "JOIN ventas.cliente " + "AS cliente ON pedido.id_cliente = cliente.id " +
+                "JOIN ventas.comercial " + "AS comercial ON pedido.id_comercial = comercial.id");
         // ResultSet listado = s.executeQuery ("SELECT * FROM pedido");
     %>
 
