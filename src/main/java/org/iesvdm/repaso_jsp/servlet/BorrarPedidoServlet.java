@@ -36,9 +36,6 @@ public class BorrarPedidoServlet extends HttpServlet {
             //Parametro valido
             pedidoDAO.delete(id);
 
-            //SI QUISIERA REDIRECCION DEL LADO DEL NAVEGADOR
-            //response.sendRedirect("ListarSociosServlet");
-
             //REDIRECCION INTERNA
             List<Pedido> listado = pedidoDAO.getAll();
             request.setAttribute("listado", listado);
